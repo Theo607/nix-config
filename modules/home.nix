@@ -9,12 +9,6 @@
       ../home/general.nix
     ];
 
-    programs.gnome.enable = true;
-
-    programs.gnome.extensions = [
-      "forge@jmmaranan.com"
-    ];
-
     home.stateVersion = "25.11";
   };
 }

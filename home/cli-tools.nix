@@ -10,9 +10,14 @@
     unzip
     ripgrep
     gh
+    tree
+    starship
 
     nodejs
     python3
   ];
+
+  programs.starship.enable = true;
+
 }
 
