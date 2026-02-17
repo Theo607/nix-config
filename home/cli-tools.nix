@@ -11,6 +11,7 @@
     ripgrep
     gh
     tree
+    zathura
     starship
 
     nodejs
