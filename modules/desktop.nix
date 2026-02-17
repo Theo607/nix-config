@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # X11 and Desktop Environment
+  # X11 / GNOME
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -11,5 +11,10 @@
     layout = "us";
     variant = "";
   };
+
+  # System-wide packages
+  environment.systemPackages = with pkgs; [
+    gnomeExtensions.forge
+  ];
 }
 
