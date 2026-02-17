@@ -15,6 +15,17 @@
     zoxide
     home-manager
     firefox
+
+    typst
+    gcc
+    clang
+    libgcc
+    gnumake
+    cmake
+    openjdk
+    zig
+    rustc
+    cargo
   ];
 }
 
