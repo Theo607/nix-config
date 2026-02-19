@@ -8,7 +8,7 @@
 
   # Keyboard layout
   services.xserver.xkb = {
-    layout = "us";
+    layout = "pl";
     variant = "";
   };
 

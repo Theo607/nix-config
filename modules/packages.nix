@@ -13,6 +13,8 @@
     ghostty
     neofetch
     zoxide
+    zellij
+    obsidian
     home-manager
     firefox
 
