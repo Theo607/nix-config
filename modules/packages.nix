@@ -28,6 +28,8 @@
     zig
     rustc
     cargo
+    php
+    phpPackages.composer
   ];
 }
 
