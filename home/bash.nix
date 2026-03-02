@@ -15,6 +15,7 @@
       alias ll='ls -lh --color=auto'
       alias gs='git status'
       alias nv='nvim'
+      alias gc='git commit'
 
       # Example function
       mkcd() {
