@@ -14,6 +14,7 @@
       # Example aliases
       alias ll='ls -lh --color=auto'
       alias gs='git status'
+      alias nv='nvim'
 
       # Example function
       mkcd() {

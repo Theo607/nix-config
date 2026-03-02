@@ -17,6 +17,8 @@
     obsidian
     home-manager
     firefox
+    python313Packages.numpy
+    geteduroam
 
     typst
     gcc
