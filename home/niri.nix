@@ -21,6 +21,7 @@ layout {
 spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
+spawn-at-startup "wall-change"
 
 binds {
     // Basic Essentials
@@ -29,6 +30,18 @@ binds {
     Mod+Q { close-window; }
     Mod+Tab { toggle-overview; }
     Mod+Shift+E { quit; }
+    Mod+W { spawn "wall-change"; }
+
+    // --- RESIZING (Columns) ---
+    // Make the focused column wider or narrower
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    // Make the focused window taller or shorter (within a column)
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    Mod+C { center-column; }
 
     // --- FOCUS (Moving your eyes) ---
     Mod+Left  { focus-column-left; }

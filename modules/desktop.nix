@@ -26,5 +26,9 @@
   };
 
   # Move specific apps (alacritty, fuzzel, etc.) to home/ or packages.nix
-  environment.systemPackages = [ pkgs.tuigreet ];
+  environment.systemPackages = [ 
+      pkgs.tuigreet 
+      pkgs.networkmanagerapplet
+      pkgs.swww
+  ];
 }

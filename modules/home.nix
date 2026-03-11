@@ -9,6 +9,7 @@
       ../home/general.nix
       ../home/niri.nix
       ../home/waybar.nix
+      ../home/wallpaper.nix
     ];
 
     home.stateVersion = "25.11";
