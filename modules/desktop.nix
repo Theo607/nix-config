@@ -30,5 +30,6 @@
       pkgs.tuigreet 
       pkgs.networkmanagerapplet
       pkgs.swww
+      pkgs.rofi
   ];
 }

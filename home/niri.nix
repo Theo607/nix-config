@@ -16,6 +16,23 @@ input {
 layout {
     gaps 12
     default-column-width { proportion 0.5; }
+
+    border {
+        width 1
+        active-color "#d1d1d1"
+        inactive-color "#333333"
+    }
+    
+    focus-ring {
+        width 1
+        active-color "#d1d1d1"
+        inactive-color "#333333"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
 }
 
 spawn-at-startup "swww-daemon"
@@ -25,8 +42,8 @@ spawn-at-startup "wall-change"
 
 binds {
     // Basic Essentials
-    Mod+Return { spawn "alacritty"; }
-    Mod+D { spawn "fuzzel"; }
+    Mod+T { spawn "ghostty"; }
+    Mod+D { spawn "rofi" "-show" "drun"; }
     Mod+Q { close-window; }
     Mod+Tab { toggle-overview; }
     Mod+Shift+E { quit; }
@@ -69,7 +86,13 @@ binds {
     Mod+Shift+1 { move-column-to-workspace 1; }
     Mod+Shift+2 { move-column-to-workspace 2; }
     Mod+Shift+3 { move-column-to-workspace 3; }
+
+    // This "reaches out" to the left and pulls the current window 
+    // into the column on the left (at the bottom).
+    Mod+Shift+J { consume-or-expel-window-left; }
     
+    // Similarly for the right
+    Mod+Shift+L { consume-or-expel-window-right; } 
 }
     '';
 }

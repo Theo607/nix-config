@@ -10,7 +10,10 @@
       ../home/niri.nix
       ../home/waybar.nix
       ../home/wallpaper.nix
+      ../home/ghostty.nix
+      ../home/rofi.nix
     ];
+    services.network-manager-applet.enable = false;
 
     home.stateVersion = "25.11";
   };

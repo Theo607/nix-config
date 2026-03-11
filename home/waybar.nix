@@ -3,84 +3,65 @@
     enable = true;
     settings = [{
       layer = "top";
-      position = "top";
-      height = 34;
-      spacing = 4;
       modules-left = [ "niri/workspaces" "niri/window" ];
       modules-center = [ "clock" ];
-      modules-right = [ "network" "cpu" "memory" "battery" "tray" ];
+      modules-right = [ "cpu" "memory" "battery" "network" "tray" ];
 
       "niri/workspaces" = {
         format = "{index}";
       };
 
       network = {
-        # Click to open a GUI to manage connections
-        on-click = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
-        format-wifi = " {essid}";
-        format-ethernet = "󰈀 {ifname}";
-        format-disconnected = "󰖪 Disconnected";
-        tooltip-format = "{ifname} via {gwaddr} 󰊗";
+        # Using much cleaner "Signal" icons
+        format-wifi = "󰤨  {essid}";
+        format-ethernet = "󰈀 ";
+        format-disconnected = "󰖪 ";
       };
 
       battery = {
-        states = {
-          warning = 30;
-          critical = 15;
-        };
-        format = "{icon} {capacity}%";
-        format-charging = "󱐋 {capacity}%";
-        format-icons = [ "" "" "" "" "" ];
+          format = "{icon}  {capacity}%";
+          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
       };
-
-      clock = {
-        format = "󰃭 {:%H:%M}";
-        tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-      };
-
-      cpu = { format = " {usage}%"; };
-      memory = { format = " {}%"; };
+      clock = { format = "󱑂  {:%H:%M}"; };
+      cpu = { format = "  {usage}%"; };
+      memory = { format = "  {percentage}%"; };
       
-      tray = {
-        spacing = 10;
+      tray = { 
+        spacing = 8;
+        icon-size = 15;
       };
     }];
 
     style = ''
       * {
-        font-family: "JetBrainsMono Nerd Font";
-        font-size: 14px;
-        border: none;
-        border-radius: 0;
+        font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+        font-weight: bold;
       }
 
       window#waybar {
-        background-color: rgba(26, 27, 38, 0.85); /* Tokyo Night style */
-        color: #c0caf5;
-        border-bottom: 2px solid rgba(122, 162, 247, 0.5);
+        background: rgba(10, 10, 10, 0.9);
+        color: #d1d1d1;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* No more squares or backgrounds! */
+      #workspaces, #window, #clock, #cpu, #memory, #battery, #network, #tray {
+        padding: 0 10px;
+        background: transparent;
       }
 
       #workspaces button {
-        padding: 0 5px;
-        color: #7aa2f7;
+        color: #555555;
       }
 
       #workspaces button.focused {
-        color: #bb9af7;
-        background-color: rgba(187, 154, 247, 0.2);
+        color: #d1d1d1;
+        border-bottom: 2px solid #d1d1d1;
       }
 
-      #network, #cpu, #memory, #battery, #clock {
-        padding: 0 10px;
-        margin: 4px 2px;
-        background-color: rgba(47, 51, 73, 0.8);
-        border-radius: 6px;
-      }
-
-      #network { color: #7aa2f7; }
+      /* Clean separation using a simple dot or space */
+      #network { color: #a9b1d6; }
       #battery { color: #9ece6a; }
-      #battery.warning { color: #e0af68; }
-      #battery.critical { color: #f7768e; }
     '';
   };
 }
