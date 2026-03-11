@@ -17,10 +17,22 @@
     obsidian
     home-manager
     firefox
-    python313Packages.numpy
-    geteduroam
+    python313Packages.pip
+    tmux
+    openssh
+    openconnect
+    yazi
+    clang-tools
+    subversion
+    gnat
+    ghc
+    clisp
+    smlnj
+    ocaml
+    swi-prolog
 
     typst
+    go
     gcc
     clang
     libgcc
