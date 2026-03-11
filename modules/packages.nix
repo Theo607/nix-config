@@ -30,6 +30,12 @@
     smlnj
     ocaml
     swi-prolog
+    alacritty
+    waybar
+    fuzzel
+    wl-clipboard
+    grim
+    slurp
 
     typst
     go

@@ -31,7 +31,9 @@
     LC_TELEPHONE = "pl_PL.UTF-8";
     LC_TIME = "pl_PL.UTF-8";
   };
-
+  services.xserver.videoDrivers = [ "modesetting" "amdgpu" ];
+  boot.kernelModules = [ "amdgpu" ];
+  boot.kernelParams = [ "amdgpu.dc=1" "amdgpu.runpm=1" ];
   # Printing
   services.printing.enable = true;
 

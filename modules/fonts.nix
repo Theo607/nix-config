@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   fonts.packages = with pkgs; [
-    fira-code
     jetbrains-mono
+    noto-fonts
+    noto-fonts-color-emoji
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 }
-

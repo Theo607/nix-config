@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, niri, ... }:
 
 {
   home-manager.users.Theo = { pkgs, ... }: {
@@ -7,6 +7,8 @@
       ../home/cli-tools.nix
       ../home/bash.nix
       ../home/general.nix
+      ../home/niri.nix
+      ../home/waybar.nix
     ];
 
     home.stateVersion = "25.11";

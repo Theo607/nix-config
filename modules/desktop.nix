@@ -1,13 +1,30 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }: {
+  # Enable Niri session (System level)
+  programs.niri.enable = true;
 
-{
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  services.xserver.xkb = {
-    layout = "pl";
+  # Graphics & Portals
+  hardware.graphics = {
+    enable = true;
+    extraPackages = [ pkgs.mesa ];
   };
 
-  console.keyMap = "pl2";
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    config.common.default = [ "gnome" "gtk" ];
+  };
+
+  # Login Manager
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
+        user = "Theo"; 
+      };
+    };
+  };
+
+  # Move specific apps (alacritty, fuzzel, etc.) to home/ or packages.nix
+  environment.systemPackages = [ pkgs.tuigreet ];
 }
