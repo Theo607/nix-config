@@ -16,6 +16,8 @@ input {
 layout {
     gaps 12
     default-column-width { proportion 0.5; }
+    background-color "transparent"
+
 
     border {
         width 1
@@ -35,6 +37,7 @@ window-rule {
     clip-to-geometry true
 }
 
+prefer-no-csd 
 spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "mako"

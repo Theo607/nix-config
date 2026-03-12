@@ -13,6 +13,8 @@
     tree
     zathura
     starship
+    bluetuith
+    asciiquarium
 
     nodejs
     python3

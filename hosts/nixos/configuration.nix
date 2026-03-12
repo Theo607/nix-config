@@ -10,6 +10,15 @@
     ../../modules/fonts.nix
     ../../modules/home.nix
   ];
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+
 
   networking.hostName = "nixos";
 
