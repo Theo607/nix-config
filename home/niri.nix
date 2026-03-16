@@ -97,5 +97,10 @@ binds {
     // Similarly for the right
     Mod+Shift+L { consume-or-expel-window-right; } 
 }
+
+hotkey-overlay {
+    skip-at-startup
+}
+
     '';
 }
