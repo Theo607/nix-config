@@ -19,6 +19,8 @@
     less
     man
     tldr 
+    nix-search
+    nudoku
 
     nodejs
     python3

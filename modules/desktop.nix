@@ -14,16 +14,25 @@
     config.common.default = [ "gnome" "gtk" ];
   };
 
-  # Login Manager
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-        user = "Theo"; 
-      };
-    };
+  services.xserver = {
+	  enable = true;
+	  displayManager.gdm.enable = true;
   };
+
+  services.xserver.displayManager.gdm = {
+    wayland = true;
+  };
+  
+  # Login Manager
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
+  #       user = "Theo"; 
+  #     };
+  #   };
+  # };
 
   # Move specific apps (alacritty, fuzzel, etc.) to home/ or packages.nix
   environment.systemPackages = [ 

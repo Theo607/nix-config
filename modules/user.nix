@@ -4,7 +4,7 @@
   users.users.Theo = {
     isNormalUser = true;
     description = "Theo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
   };
 
   # Optional: enable sudo without password
