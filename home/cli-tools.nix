@@ -16,6 +16,8 @@
     bluetuith
     asciiquarium
     fastfetch
+    less
+    man
     tldr 
 
     nodejs
