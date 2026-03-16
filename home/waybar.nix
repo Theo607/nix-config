@@ -5,13 +5,21 @@
       layer = "top";
       modules-left = [ "niri/workspaces" "niri/window" ];
       modules-center = [ "clock" ];
-      modules-right = [ "pulseaudio" "pulseaudio#microphone" "cpu" "memory" "battery" "network" "tray" ];
+      modules-right = [ "backlight" "pulseaudio" "pulseaudio#microphone" "cpu" "memory" "battery" "network" "tray" ];
 
       "niri/workspaces" = {
         format = "{index}";
       };
 
-      # --- Audio Modules (Now correctly inside settings) ---
+      # --- Brightness Module ---
+      "backlight" = {
+        device = "intel_backlight"; # Change to "amd_backlight" if you have an AMD CPU
+        format = "{icon} {percent}%";
+        format-icons = [ "󰃞" "󰃟" "󰃠" ];
+        on-scroll-up = "${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
+        on-scroll-down = "${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
+      };
+
       "pulseaudio" = {
         format = "{icon}  {volume}%";
         format-muted = "󰝟 ";
@@ -30,7 +38,6 @@
         on-scroll-down = "${pkgs.pamixer}/bin/pamixer --default-source -d 5";
       };
 
-      # --- Rest of your modules ---
       network = {
         format-wifi = "󰤨  {essid}";
         format-ethernet = "󰈀 ";
@@ -64,7 +71,8 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      #workspaces, #window, #clock, #cpu, #memory, #battery, #network, #tray, #pulseaudio {
+      /* ADDED #backlight here */
+      #workspaces, #window, #clock, #cpu, #memory, #battery, #network, #tray, #pulseaudio, #backlight {
         padding: 0 10px;
         background: transparent;
       }
@@ -81,6 +89,7 @@
       #network { color: #a9b1d6; }
       #battery { color: #9ece6a; }
       #pulseaudio { color: #f7768e; }
+      #backlight { color: #e0af68; } /* TokyoNight yellow-ish color */
       #pulseaudio.microphone { color: #ff9e64; padding: 0 10px; }
     '';
   };

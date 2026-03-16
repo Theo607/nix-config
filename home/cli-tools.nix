@@ -15,6 +15,8 @@
     starship
     bluetuith
     asciiquarium
+    fastfetch
+    tldr 
 
     nodejs
     python3
