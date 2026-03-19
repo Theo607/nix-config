@@ -21,6 +21,8 @@
     tldr 
     nix-search
     nudoku
+    spotify-cli-linux
+    spotify
 
     nodejs
     python3
