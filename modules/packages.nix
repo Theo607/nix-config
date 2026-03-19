@@ -46,10 +46,9 @@
     cmake
     openjdk
     zig
-    rustc
-    cargo
     php
     phpPackages.composer
+    rustup
   ];
 }
 

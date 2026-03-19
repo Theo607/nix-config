@@ -7,7 +7,7 @@
     vimAlias = true;
 
     extraPackages = with pkgs; [
-      nixd clang-tools zig rust-analyzer zls
+      nixd clang-tools zig zls
       vscode-langservers-extracted
       typescript-language-server
       phpactor

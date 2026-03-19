@@ -4,6 +4,8 @@
   home-manager.users.Theo = { pkgs, ... }: {
     imports = [
       ../home/neovim.nix
+      ../home/helix.nix
+      ../home/vscode.nix
       ../home/cli-tools.nix
       ../home/bash.nix
       ../home/general.nix
