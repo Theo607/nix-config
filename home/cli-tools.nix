@@ -21,6 +21,7 @@
     tldr 
     nix-search
     nudoku
+    ani-cli
     spotify-cli-linux
     spotify
 
