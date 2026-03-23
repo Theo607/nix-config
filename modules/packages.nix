@@ -17,6 +17,7 @@
     obsidian
     home-manager
     firefox
+    librewolf
     python313Packages.pip
     tmux
     openssh

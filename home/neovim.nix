@@ -23,6 +23,23 @@
     ];
 
     extraLuaConfig = ''
+      -- 0. Indent
+      -- Indentation
+      vim.opt.tabstop = 4        
+      vim.opt.shiftwidth = 4    
+      vim.opt.softtabstop = 4  
+      vim.opt.expandtab = true
+      vim.opt.smartindent = true
+      vim.opt.autoindent = true
+      -- Language specific indentation
+      vim.api.nvim_create_autocmd("FileType", {
+              pattern = { "lua", "nix", "typescript", "javascript", "html", "css", "json", "yaml", "haskell", "ocaml" },
+              callback = function()
+              vim.opt_local.tabstop = 2
+              vim.opt_local.shiftwidth = 2
+              vim.opt_local.softtabstop = 2
+              end,
+              })
       -- 1. SET LEADER FIRST
       vim.g.mapleader = " "
 
@@ -202,7 +219,31 @@
 
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
       vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signatureHelp, { border = "rounded" })
-    '';
+
+      -- TODO comments
+      require("todo-comments").setup({})
+      -- Surround
+      require("nvim-surround").setup({})
+      -- Harpoon
+      local harpoon = require("harpoon")
+	harpoon:setup()
+
+	vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+	vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+	vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
+	vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
+	vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
+	vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
+
+	vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end)
+	vim.keymap.set("n", "<leader>p", function() harpoon:list():prev() end)
+    -- Indent Blank Line
+  require("ibl").setup({
+      indent = { char = "│" },
+        scope = { enabled = false }, 
+        })
+'';
 
     plugins = with pkgs.vimPlugins; [
       tokyonight-nvim
@@ -224,6 +265,10 @@
       nvim-autopairs
       nvim-ts-autotag
       toggleterm-nvim
+      todo-comments-nvim
+      nvim-surround
+      harpoon2
+      indent-blankline-nvim
     ];
   };
 }

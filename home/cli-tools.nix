@@ -18,15 +18,19 @@
     fastfetch
     less
     man
+    cppman
+    rusty-man
     tldr 
     nix-search
     nudoku
+    sl
     ani-cli
     spotify-cli-linux
     spotify
 
     nodejs
     python3
+    fzf
   ];
 
   programs.starship.enable = true;
