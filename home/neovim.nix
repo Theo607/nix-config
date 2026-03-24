@@ -20,6 +20,7 @@
       gopls
       sbcl
       polyml
+      gnat
     ];
 
     extraLuaConfig = ''
@@ -91,6 +92,7 @@
         jdtls = { cmd = { "jdtls" } },
         hls = { cmd = { "haskell-language-server-wrapper", "--lsp" } },
         ocamllsp = { cmd = { "ocamllsp" } }
+        ada_ls = { cmd = { "gnatls", "--stdio" } }
       }
 
       for name, config in pairs(servers) do
