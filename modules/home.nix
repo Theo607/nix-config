@@ -15,6 +15,7 @@
       ../home/ghostty.nix
       ../home/rofi.nix
       ../home/krita.nix
+      ../home/yazi.nix
     ];
     services.network-manager-applet.enable = false;
 

@@ -22,7 +22,6 @@
     tmux
     openssh
     openconnect
-    yazi
     clang-tools
     subversion
     gnat
@@ -51,6 +50,8 @@
     phpPackages.composer
     rustup
     pinta
+
+    google-chrome
   ];
 
   services.xserver.wacom.enable = true;
