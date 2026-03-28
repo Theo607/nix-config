@@ -1,5 +1,13 @@
 { pkgs, ... }: {
-  # We use xdg.configFile instead of programs.niri to avoid 'option does not exist' errors
+  home.packages = with pkgs; [
+    swaylock-effects
+    swayidle
+    xwayland-satellite
+  ];
+
+  home.sessionVariables = {
+    SWAYLOCK = "${pkgs.swaylock}/bin/swaylock";
+  };
   xdg.configFile."niri/config.kdl".text = ''
 input {
     keyboard {
@@ -38,6 +46,8 @@ window-rule {
 }
 
 prefer-no-csd 
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "QT_QPA_PLATFORM"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
@@ -108,6 +118,11 @@ binds {
     
     // Similarly for the right
     Mod+Shift+L { consume-or-expel-window-right; } 
+  Mod+L {
+
+      spawn "swaylock" "--screenshots" "--indicator" "--clock" "--effect-blur" "7x5" "--ring-color" "bb00cc" "--fade-in" "0.2" "--key-hl-color" "880033" "--inside-color" "00000088" "--separator-color" "00000000" "--grace" "2";
+       
+  }
 }
 
 hotkey-overlay {

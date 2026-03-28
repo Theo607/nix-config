@@ -50,6 +50,9 @@
     php
     phpPackages.composer
     rustup
+    pinta
   ];
+
+  services.xserver.wacom.enable = true;
 }
 

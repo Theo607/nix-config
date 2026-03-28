@@ -12,6 +12,7 @@
   ];
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  services.flatpak.enable = true;
 
   services.pipewire = {
     enable = true;

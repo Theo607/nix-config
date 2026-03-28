@@ -14,6 +14,7 @@
       ../home/wallpaper.nix
       ../home/ghostty.nix
       ../home/rofi.nix
+      ../home/krita.nix
     ];
     services.network-manager-applet.enable = false;
 

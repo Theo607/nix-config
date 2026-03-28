@@ -91,8 +91,8 @@
         kotlin_language_server = { cmd = { "kotlin-language-server" } },
         jdtls = { cmd = { "jdtls" } },
         hls = { cmd = { "haskell-language-server-wrapper", "--lsp" } },
-        ocamllsp = { cmd = { "ocamllsp" } }
-        ada_ls = { cmd = { "gnatls", "--stdio" } }
+        ocamllsp = { cmd = { "ocamllsp" } },
+        ada_ls = { cmd = { "gnatls", "--stdio" } },
       }
 
       for name, config in pairs(servers) do
@@ -228,6 +228,15 @@
       require("nvim-surround").setup({})
       -- Harpoon
       local harpoon = require("harpoon")
+      -- Markdown render
+      require("render-markdown").setup({})
+      -- Fidget
+      require("fidget").setup({})
+      -- Colorizer
+      require("colorizer").setup({})
+      -- Tabout
+      require("tabout").setup({})
+
 	harpoon:setup()
 
 	vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
@@ -271,6 +280,10 @@
       nvim-surround
       harpoon2
       indent-blankline-nvim
+      render-markdown-nvim
+      fidget-nvim
+      nvim-colorizer-lua
+      tabout-nvim
     ];
   };
 }
