@@ -2,7 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    loupe
     vim
+    tauon
     wget
     curl
     neovim
@@ -13,7 +15,6 @@
     ghostty
     neofetch
     zoxide
-    zellij
     obsidian
     home-manager
     firefox

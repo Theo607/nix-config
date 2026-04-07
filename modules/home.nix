@@ -16,6 +16,8 @@
       ../home/rofi.nix
       ../home/krita.nix
       ../home/yazi.nix
+      ../home/zellij.nix
+      ../home/steam.nix
     ];
     services.network-manager-applet.enable = false;
 

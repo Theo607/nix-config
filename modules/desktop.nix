@@ -46,8 +46,8 @@
 	  enable = true;
 	  displayManager.gdm.enable = true;
   };
+  services.displayManager.defaultSession = "niri";
 
-  # In configuration.nix
   programs.xwayland.enable = true;
 
 

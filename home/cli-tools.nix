@@ -2,11 +2,14 @@
 
 {
   home.packages = with pkgs; [
+    musikcube
     git
+    vlc
     zoxide
     neofetch
     vim
     zip
+    feh
     unzip
     ripgrep
     gh
@@ -31,6 +34,7 @@
     nodejs
     python3
     fzf
+    R
   ];
 
   programs.starship.enable = true;
