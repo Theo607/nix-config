@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
     musikcube
+    playerctl
+    fum
     git
     vlc
     zoxide

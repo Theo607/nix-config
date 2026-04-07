@@ -52,6 +52,7 @@ spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "wall-change"
+spawn-at-startup "wall-next"
 
 binds {
     // Basic Essentials
@@ -61,6 +62,7 @@ binds {
     Mod+Tab { toggle-overview; }
     Mod+Shift+E { quit; }
     Mod+W { spawn "wall-change"; }
+    Mod+N { spawn "wall-next"; }
 
     // --- RESIZING (Columns) ---
     // Make the focused column wider or narrower

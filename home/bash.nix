@@ -32,6 +32,11 @@
       alias ....='cd ../../..'
       alias .....='cd ../../../..'
       
+      # Playerctl
+      alias pp='playerctl play-pause'
+      alias pn='playerctl next'
+      alias pv='playerctl previous'
+      
       # History improvements
       shopt -s histappend   
       HISTSIZE=5000

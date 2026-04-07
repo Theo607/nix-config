@@ -12,6 +12,7 @@
       ../home/niri.nix
       ../home/waybar.nix
       ../home/wallpaper.nix
+      ../home/wall-next.nix
       ../home/ghostty.nix
       ../home/rofi.nix
       ../home/krita.nix
