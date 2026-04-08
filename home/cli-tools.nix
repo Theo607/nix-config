@@ -10,6 +10,7 @@
     zoxide
     neofetch
     vim
+    nim
     zip
     feh
     unzip

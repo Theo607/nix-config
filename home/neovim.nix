@@ -102,9 +102,12 @@
         end
       end 
 
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to Definition" })
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Hover Documentation" })
-      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = "Rename Symbol" }) 
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+          vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, opts)
+          vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 
       require('nvim-treesitter.configs').setup({
         highlight = { enable = true },
